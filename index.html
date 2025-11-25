@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulir Data Calon Pelajar - Pondok Pesantren Al-Jauhar Tungkaran</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --bg:#f8fff8;
+      --card:#ffffff;
+      --green-1:#19a77b;
+      --green-2:#0b7b5e;
+      --muted:#647b6b;
+      --error:#d9534f;
+    }
+    body{
+      background: linear-gradient(180deg,#f8fff8 0%, #f2fff6 100%);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#0a3e2f;
+      padding:28px 12px 80px;
+    }
+    .container-card{max-width:1000px;margin:auto}
+    .brand-title{color:var(--green-2); text-align:center; margin-bottom:10px; font-weight:800;}
+    .card-form{border-radius:12px; padding:20px; background:var(--card); box-shadow:0 8px 30px rgba(10,60,40,0.06); border:1px solid rgba(11,123,94,0.06)}
+    .section-title{display:block; font-weight:700; color:var(--green-2); border-left:6px solid var(--green-1); padding-left:12px; margin-top:18px; margin-bottom:12px; font-size:1.02rem;}
+    label, .form-label{ color:#0b4f3f; font-weight:600; }
+    .form-control, .form-select{ border-radius:8px; border:1px solid rgba(10,99,77,0.12); padding:10px 12px; }
+    .btn-primary{ background:var(--green-1); border:none; border-radius:8px; padding:10px 12px; font-weight:700; }
+    .btn-primary:hover{ background:var(--green-2); transform:translateY(-2px); }
+    .invalid-msg{ color:var(--error); font-size:0.9rem; margin-top:6px; display:none; }
+    .field-error{ border-color: var(--error) !important; box-shadow: 0 0 0 3px rgba(217,83,79,0.06); }
+    .hint{ font-size:0.9rem; color:var(--muted); }
+    .lainnya-field{ display:none; margin-top:10px; }
+    @media (max-width:576px){ body{ padding:14px 8px 50px; } }
+  </style>
+</head>
+<body>
+  <div class="container container-card">
+    <h2 class="brand-title">FORMULIR DATA CALON PELAJAR<br><small>PONDOK PESANTREN AL-JAUHAR TUNGKARAN</small></h2>
+
+    <form id="formulir" class="card-form" autocomplete="off" novalidate>
+      <!-- A. Biodata -->
+      <span class="section-title">A. Biodata calon pelajar</span>
+
+      <div class="mb-3">
+        <label class="form-label">1. Nama lengkap</label>
+        <input type="text" name="nama_lengkap" class="form-control" data-required>
+        <div class="invalid-msg">Nama lengkap wajib diisi</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">2. NISN</label>
+        <input type="text" name="nisn" class="form-control" data-required>
+        <div class="invalid-msg">NISN wajib diisi</div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">3. Tempat lahir</label>
+          <input type="text" name="tempat_lahir" class="form-control" data-required>
+          <div class="invalid-msg">Tempat lahir wajib diisi</div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">4. Tanggal lahir</label>
+          <input type="date" name="tanggal_lahir" class="form-control" data-required>
+          <div class="invalid-msg">Tanggal lahir wajib diisi</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">5. Warga negara</label>
+        <input type="text" name="warga_negara" class="form-control" data-required>
+        <div class="invalid-msg">Warga negara wajib diisi</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">6. Alamat lengkap</label>
+        <textarea name="alamat_lengkap" class="form-control" rows="2" data-required></textarea>
+        <div class="invalid-msg">Alamat lengkap wajib diisi</div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Provinsi</label><input name="provinsi" class="form-control" data-required><div class="invalid-msg">Provinsi wajib</div></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Kabupaten/Kota</label><input name="kabupaten" class="form-control" data-required><div class="invalid-msg">Kabupaten/Kota wajib</div></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Kecamatan</label><input name="kecamatan" class="form-control" data-required><div class="invalid-msg">Kecamatan wajib</div></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Desa/Kelurahan</label><input name="desa" class="form-control" data-required><div class="invalid-msg">Desa/Kelurahan wajib</div></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Kode Pos</label><input name="kode_pos" class="form-control" data-required><div class="invalid-msg">Kode pos wajib</div></div>
+        <div class="col-md-6 mb-3"><label class="form-label">NIK</label><input name="nik" class="form-control" data-required><div class="invalid-msg">NIK wajib</div></div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Alamat (LN)</label>
+        <textarea name="alamat_luar_negeri" class="form-control" rows="2"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Nomor Passport</label>
+        <input name="passport" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Prestasi (isi: prestasi - tahun)</label>
+        <textarea name="prestasi" class="form-control" rows="2"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Hobi</label>
+        <select name="hobi" id="hobi_select" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option>Olahraga</option>
+          <option>Kesenian</option>
+          <option>Membaca</option>
+          <option>Menulis</option>
+          <option>Traveling</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <div class="invalid-msg">Hobi wajib diisi</div>
+
+        <!-- model B: field tambahan muncul sebagai kolom baru -->
+        <div class="lainnya-field" id="hobi_lainnya_field">
+          <label class="form-label">Hobi (lainnya)</label>
+          <input type="text" name="hobi_lainnya" class="form-control">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Cita-cita</label>
+        <select name="cita_cita" id="cita_select" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option>PNS</option>
+          <option>TNI/ Polri</option>
+          <option>Guru/ Dosen</option>
+          <option>Dokter</option>
+          <option>Wiraswasta</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <div class="invalid-msg">Cita-cita wajib diisi</div>
+
+        <div class="lainnya-field" id="cita_lainnya_field">
+          <label class="form-label">Cita-cita (lainnya)</label>
+          <input type="text" name="cita_cita_lainnya" class="form-control">
+        </div>
+      </div>
+
+      <!-- Kelas (tidak ada 'Lainnya') -->
+      <div class="mb-3">
+        <label class="form-label">Kelas</label>
+        <select name="kelas" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option value="Reguler">Reguler</option>
+          <option value="Intensif">Intensif</option>
+        </select>
+        <div class="invalid-msg">Kelas wajib dipilih</div>
+      </div>
+
+      <!-- B. Riwayat Akademis -->
+      <span class="section-title">B. Riwayat akademis</span>
+
+      <div class="mb-3">
+        <label class="form-label">Ijazah terakhir</label>
+        <select name="ijazah_terakhir" id="ijazah_select" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option>SD</option>
+          <option>MI</option>
+          <option>SMP</option>
+          <option>Mts</option>
+          <option>MA</option>
+          <option>SMA</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <div class="invalid-msg">Ijazah terakhir wajib</div>
+        <div class="lainnya-field" id="ijazah_lainnya_field">
+          <label class="form-label">Ijazah (lainnya)</label>
+          <input type="text" name="ijazah_terakhir_lainnya" class="form-control">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Pendidikan sebelumnya</label>
+        <select name="pendidikan_sebelumnya" id="pendidikan_select" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option>Sekolah umum</option>
+          <option>Madrasah</option>
+          <option>PPS Wajar Dikdas</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <div class="invalid-msg">Pendidikan sebelumnya wajib</div>
+        <div class="lainnya-field" id="pendidikan_lainnya_field">
+          <label class="form-label">Pendidikan sebelumnya (lainnya)</label>
+          <input type="text" name="pendidikan_sebelumnya_lainnya" class="form-control">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Nama Pendidikan sebelumnya</label>
+        <input name="nama_sekolah" class="form-control" data-required>
+        <div class="invalid-msg">Nama sekolah wajib</div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Kabupaten/Kota sekolah</label><input name="kab_sekolah" class="form-control" data-required><div class="invalid-msg">Wajib</div></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Provinsi sekolah</label><input name="prov_sekolah" class="form-control" data-required><div class="invalid-msg">Wajib</div></div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Tahun lulus</label>
+        <input name="tahun_lulus" class="form-control" data-required>
+        <div class="invalid-msg">Tahun lulus wajib</div>
+      </div>
+
+      <!-- C. Data keluarga -->
+      <span class="section-title">C. Data keluarga</span>
+
+      <div class="mb-3"><label class="form-label">Jumlah saudara</label><input type="number" name="jumlah_saudara" class="form-control" data-required><div class="invalid-msg">Jumlah saudara wajib</div></div>
+      <div class="mb-3"><label class="form-label">No. HP keluarga</label><input name="no_hp_keluarga" class="form-control" data-required><div class="invalid-msg">No. HP wajib</div></div>
+
+      <div class="mb-3">
+        <label class="form-label">Penghasilan orang tua</label>
+        <select name="penghasilan" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option value="<=500000"><= Rp.500.000</option>
+          <option value="500001-1000000">Rp.500.001–1.000.000</option>
+          <option value="1000001-2000000">Rp.1.000.001–2.000.000</option>
+          <option value="2000001-3000000">Rp.2.000.001–3.000.000</option>
+          <option value="3000001-4000000">Rp.3.000.001–4.000.000</option>
+          <option value=">=4000001">>=Rp.4.000.001</option>
+        </select>
+        <div class="invalid-msg">Penghasilan wajib</div>
+      </div>
+
+      <div class="mb-3"><label class="form-label">Nomor KK</label><input name="no_kk" class="form-control" data-required><div class="invalid-msg">Nomor KK wajib</div></div>
+
+      <!-- Ayah -->
+      <h5 class="mt-3">Data Ayah</h5>
+      <div class="mb-3"><label class="form-label">Nama Ayah</label><input name="nama_ayah" class="form-control" data-required><div class="invalid-msg">Nama Ayah wajib</div></div>
+
+      <div class="mb-3">
+        <label class="form-label">Status Ayah</label>
+        <select name="status_ayah" class="form-select" data-required>
+          <option value="">-- Pilih --</option><option>Hidup</option><option>Meninggal</option>
+        </select>
+        <div class="invalid-msg">Status Ayah wajib</div>
+      </div>
+
+      <div class="mb-3"><label class="form-label">NIK Ayah</label><input name="nik_ayah" class="form-control" data-required><div class="invalid-msg">NIK Ayah wajib</div></div>
+
+      <div class="mb-3">
+        <label class="form-label">Pendidikan Ayah</label>
+        <select name="pendidikan_ayah" id="pend_ayah_select" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option><= SLTP</option><option>SLTA</option><option>S1</option><option value="Lainnya">Lainnya</option>
+        </select>
+        <div class="invalid-msg">Pendidikan Ayah wajib</div>
+
+        <div class="lainnya-field" id="pend_ayah_lainnya_field">
+          <label class="form-label">Pendidikan Ayah (lainnya)</label>
+          <input type="text" name="pendidikan_ayah_lainnya" class="form-control">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Pekerjaan Ayah</label>
+        <select name="pekerjaan_ayah" id="pekerjaan_ayah_select" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option>PNS</option>
+          <option>Pegawai swasta</option>
+          <option>Wiraswasta</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <div class="invalid-msg">Pekerjaan Ayah wajib</div>
+
+        <div class="lainnya-field" id="pekerjaan_ayah_lainnya_field">
+          <label class="form-label">Pekerjaan Ayah (lainnya)</label>
+          <input type="text" name="pekerjaan_ayah_lainnya" class="form-control">
+        </div>
+      </div>
+
+      <div class="mb-3"><label class="form-label">Tempat kerja Ayah</label><input name="kerja_ayah" class="form-control" data-required><div class="invalid-msg">Tempat kerja Ayah wajib</div></div>
+      <div class="mb-3"><label class="form-label">Suku Ayah</label><input name="suku_ayah" class="form-control" data-required><div class="invalid-msg">Suku Ayah wajib</div></div>
+
+      <div class="mb-3">
+        <label class="form-label">Agama Ayah</label>
+        <select name="agama_ayah" id="agama_ayah_select" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option>Islam</option>
+          <option>Kristen</option>
+          <option>Konghuchu</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <div class="invalid-msg">Agama Ayah wajib</div>
+
+        <div class="lainnya-field" id="agama_ayah_lainnya_field">
+          <label class="form-label">Agama Ayah (lainnya)</label>
+          <input type="text" name="agama_ayah_lainnya" class="form-control">
+        </div>
+      </div>
+
+      <!-- Ibu -->
+      <h5 class="mt-3">Data Ibu</h5>
+      <div class="mb-3"><label class="form-label">Nama Ibu</label><input name="nama_ibu" class="form-control" data-required><div class="invalid-msg">Nama Ibu wajib</div></div>
+
+      <div class="mb-3">
+        <label class="form-label">Status Ibu</label>
+        <select name="status_ibu" class="form-select" data-required>
+          <option value="">-- Pilih --</option><option>Hidup</option><option>Meninggal</option>
+        </select>
+        <div class="invalid-msg">Status Ibu wajib</div>
+      </div>
+
+      <div class="mb-3"><label class="form-label">NIK Ibu</label><input name="nik_ibu" class="form-control" data-required><div class="invalid-msg">NIK Ibu wajib</div></div>
+
+      <div class="mb-3">
+        <label class="form-label">Pendidikan Ibu</label>
+        <select name="pendidikan_ibu" id="pend_ibu_select" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option><= SLTP</option><option>SLTA</option><option>S1</option><option value="Lainnya">Lainnya</option>
+        </select>
+        <div class="invalid-msg">Pendidikan Ibu wajib</div>
+
+        <div class="lainnya-field" id="pend_ibu_lainnya_field">
+          <label class="form-label">Pendidikan Ibu (lainnya)</label>
+          <input type="text" name="pendidikan_ibu_lainnya" class="form-control">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Pekerjaan Ibu</label>
+        <select name="pekerjaan_ibu" id="pekerjaan_ibu_select" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option>PNS</option>
+          <option>Pegawai swasta</option>
+          <option>Wiraswasta</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <div class="invalid-msg">Pekerjaan Ibu wajib</div>
+
+        <div class="lainnya-field" id="pekerjaan_ibu_lainnya_field">
+          <label class="form-label">Pekerjaan Ibu (lainnya)</label>
+          <input type="text" name="pekerjaan_ibu_lainnya" class="form-control">
+        </div>
+      </div>
+
+      <div class="mb-3"><label class="form-label">Tempat kerja Ibu</label><input name="kerja_ibu" class="form-control" data-required><div class="invalid-msg">Tempat kerja Ibu wajib</div></div>
+      <div class="mb-3"><label class="form-label">Suku Ibu</label><input name="suku_ibu" class="form-control" data-required><div class="invalid-msg">Suku Ibu wajib</div></div>
+
+      <div class="mb-3">
+        <label class="form-label">Agama Ibu</label>
+        <select name="agama_ibu" id="agama_ibu_select" class="form-select" data-required>
+          <option value="">-- Pilih --</option>
+          <option>Islam</option>
+          <option>Kristen</option>
+          <option>Konghuchu</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <div class="invalid-msg">Agama Ibu wajib</div>
+
+        <div class="lainnya-field" id="agama_ibu_lainnya_field">
+          <label class="form-label">Agama Ibu (lainnya)</label>
+          <input type="text" name="agama_ibu_lainnya" class="form-control">
+        </div>
+      </div>
+
+      <!-- Wali (opsional) -->
+      <span class="section-title">Wali (jika ada) — <small class="hint">opsional</small></span>
+      <div class="mb-3"><label class="form-label">Nama Wali</label><input name="nama_wali" class="form-control"></div>
+      <div class="mb-3"><label class="form-label">NIK Wali</label><input name="nik_wali" class="form-control"></div>
+      <div class="mb-3"><label class="form-label">Hubungan Wali</label><input name="hub_wali" class="form-control"></div>
+      <div class="mb-3"><label class="form-label">Pendidikan Wali</label><input name="pendidikan_wali" class="form-control"></div>
+
+      <!-- Sosial & Info -->
+      <div class="mb-3"><label class="form-label">Posisi orang tua</label><select name="posisi_ortu" id="posisi_ortu_select" class="form-select" data-required>
+        <option value="">-- Pilih --</option>
+        <option>Masyarakat biasa</option>
+        <option>Tokoh Masyarakat Formal</option>
+        <option>Tokoh Masyarakat Non-Formal</option>
+        <option value="Lainnya">Lainnya</option>
+      </select><div class="invalid-msg">Wajib</div>
+        <div class="lainnya-field" id="posisi_ortu_lainnya_field"><label class="form-label">Posisi orang tua (lainnya)</label><input type="text" name="posisi_ortu_lainnya" class="form-control"></div>
+      </div>
+
+      <div class="mb-3"><label class="form-label">Ormas</label><select name="ormas" id="ormas_select" class="form-select" data-required>
+        <option value="">-- Pilih --</option><option>Muhammadiyah</option><option>NU</option><option value="Lainnya">Lain-lain</option>
+      </select><div class="invalid-msg">Wajib</div>
+        <div class="lainnya-field" id="ormas_lainnya_field"><label class="form-label">Ormas (lainnya)</label><input type="text" name="ormas_lainnya" class="form-control"></div>
+      </div>
+
+      <div class="mb-3"><label class="form-label">Parpol</label><select name="parpol" id="parpol_select" class="form-select" data-required>
+        <option value="">-- Pilih --</option><option>TidakTahu</option><option value="Lainnya">Lainnya</option>
+      </select><div class="invalid-msg">Wajib</div>
+        <div class="lainnya-field" id="parpol_lainnya_field"><label class="form-label">Parpol (lainnya)</label><input type="text" name="parpol_lainnya" class="form-control"></div>
+      </div>
+
+      <div class="mb-3"><label class="form-label">Pernah Mondok</label><select name="pernah_mondok" class="form-select" data-required><option value="">-- Pilih --</option><option>Tidak pernah</option><option>Pernah</option></select><div class="invalid-msg">Wajib</div></div>
+
+      <div class="mb-3"><label class="form-label">Lingkungan</label><select name="lingkungan" class="form-select" data-required><option value="">-- Pilih --</option><option>Perkotaan</option><option>Pedesaan</option></select><div class="invalid-msg">Wajib</div></div>
+
+      <div class="mb-3">
+        <label class="form-label">Mengetahui Pondok dari</label>
+        <select name="info_pondok" id="info_pondok_select" class="form-select" data-required>
+          <option value="">-- Pilih --</option><option>Orang tua/ Famili</option><option>Internet</option><option value="Lainnya">Lainnya</option>
+        </select>
+        <div class="invalid-msg">Wajib</div>
+        <div class="lainnya-field" id="info_pondok_lainnya_field">
+          <label class="form-label">Mengetahui pondok dari (lainnya)</label>
+          <input type="text" name="info_pondok_lainnya" class="form-control">
+        </div>
+      </div>
+
+      <div class="mt-3 d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Kirim Pendaftaran</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- modal sukses -->
+  <div class="modal fade" id="successModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4 text-center">
+        <h3 class="fw-bold text-success">Pendaftaran Berhasil!</h3>
+        <p>Terima kasih, data Anda telah tersimpan.</p>
+        <button class="btn btn-secondary mt-2" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ========== Ganti dengan URL Web App Anda setelah Deploy ========== */
+const SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyGtyEN8snfCFeJSY9INCVl35BTet0JN7txM9mxmik3FouceM1TO5UIxNhtLvyvGYZ9/exec";
+
+/* ===== helper show/hide untuk semua field 'lainnya' model B ===== */
+const showIfLainnya = (selectId, fieldId) => {
+  const sel = document.getElementById(selectId);
+  const fld = document.getElementById(fieldId);
+  if (!sel || !fld) return;
+  const toggle = () => {
+    const v = (sel.value || "").toString().trim().toLowerCase();
+    fld.style.display = (v === "lainnya" || v === "lain-lain") ? "block" : "none";
+  };
+  sel.addEventListener('change', toggle);
+  toggle(); // inisialisasi
+};
+
+/* daftarkan semua pasangan select -> field 'lainnya' */
+showIfLainnya('hobi_select', 'hobi_lainnya_field');
+showIfLainnya('cita_select', 'cita_lainnya_field');
+showIfLainnya('ijazah_select', 'ijazah_lainnya_field');
+showIfLainnya('pendidikan_select', 'pendidikan_lainnya_field');
+showIfLainnya('pend_ayah_select', 'pend_ayah_lainnya_field');
+showIfLainnya('pekerjaan_ayah_select', 'pekerjaan_ayah_lainnya_field');
+showIfLainnya('agama_ayah_select', 'agama_ayah_lainnya_field');
+showIfLainnya('pend_ibu_select', 'pend_ibu_lainnya_field');
+showIfLainnya('pekerjaan_ibu_select', 'pekerjaan_ibu_lainnya_field');
+showIfLainnya('agama_ibu_select', 'agama_ibu_lainnya_field');
+showIfLainnya('posisi_ortu_select', 'posisi_ortu_lainnya_field');
+showIfLainnya('ormas_select', 'ormas_lainnya_field');
+showIfLainnya('parpol_select', 'parpol_lainnya_field');
+showIfLainnya('info_pondok_select', 'info_pondok_lainnya_field');
+
+/* ===== simple front-end validation (fields with data-required) ===== */
+function validateForm(form) {
+  let ok = true;
+  // hide previous
+  form.querySelectorAll('.invalid-msg').forEach(n => n.style.display = 'none');
+  form.querySelectorAll('.field-error').forEach(n => n.classList.remove('field-error'));
+
+  form.querySelectorAll('[data-required]').forEach(field => {
+    const tag = field.tagName.toLowerCase();
+    const val = (field.value || '').toString().trim();
+    let filled = val !== '';
+    if (tag === 'select') filled = val !== '';
+    if (!filled) {
+      ok = false;
+      const msg = field.parentElement.querySelector('.invalid-msg');
+      if (msg) msg.style.display = 'block';
+      field.classList.add('field-error');
+    }
+  });
+
+  return ok;
+}
+
+/* ===== submit handler ===== */
+document.getElementById('formulir').addEventListener('submit', function(e){
+  e.preventDefault();
+  const form = e.target;
+
+  if (!validateForm(form)) {
+    const first = form.querySelector('.field-error');
+    if (first) first.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+
+  // Build FormData and send
+  const fd = new FormData(form);
+
+  fetch(SCRIPT_WEB_APP_URL, { method: 'POST', body: fd })
+    .then(r => r.text())
+    .then(text => {
+      if (text && text.toUpperCase().includes('SUCCESS')) {
+        // show modal and reset
+        new bootstrap.Modal(document.getElementById('successModal')).show();
+        form.reset();
+        // hide all 'lainnya' fields after reset
+        document.querySelectorAll('.lainnya-field').forEach(f => f.style.display = 'none');
+      } else {
+        alert('Respon server: ' + text);
+      }
+    })
+    .catch(err => {
+      alert('Terjadi kesalahan saat mengirim: ' + err);
+    });
+});
+</script>
+</body>
+</html>
